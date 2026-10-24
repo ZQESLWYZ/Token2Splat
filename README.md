@@ -117,7 +117,3 @@ samples = generate_objects(vae, flow, cfg, classes=[0, 1], samples=4, steps=32, 
 }
 
 ```
-
-```
-
-```
