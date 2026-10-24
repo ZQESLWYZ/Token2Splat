@@ -34,7 +34,7 @@ pip install -e .
 Run the end-to-end CPU smoke demo in ~1 minute:
 
 ```powershell
-conda run -n Token2Splat python scripts/demo.py --config configs/synthetic_smoke.yaml --output-dir runs/demo --samples 2 --steps 24
+conda run -n Token2Splat python scripts/demo.py --config configs/data_smoke.yaml --output-dir runs/demo --samples 2 --steps 24
 
 ```
 
@@ -44,21 +44,21 @@ conda run -n Token2Splat python scripts/demo.py --config configs/synthetic_smoke
 
 1. **Data Preparation**: Use ObjectGS-34 scene extraction.
 ```powershell
-python scripts/make_synthetic_data.py --config configs/synthetic_smoke.yaml --out data/synthetic
+python scripts/make_data_data.py --config configs/data_smoke.yaml --out data/data
 
 ```
 
 
 2. **Stage 1 Training (VAE)**:
 ```powershell
-python scripts/train_stage1.py --config configs/synthetic_smoke.yaml --data data/synthetic --work-dir runs/synthetic/stage1 --device cpu --cache-tokens
+python scripts/train_stage1.py --config configs/data_smoke.yaml --data data/data --work-dir runs/data/stage1 --device cpu --cache-tokens
 
 ```
 
 
 3. **Stage 2 Training (Flow)**:
 ```powershell
-python scripts/train_stage2.py --config configs/synthetic_smoke.yaml --data data/synthetic --work-dir runs/synthetic/stage2 --vae-checkpoint runs/synthetic/stage1/vae_best.pt --device cpu --cache-tokens
+python scripts/train_stage2.py --config configs/data_smoke.yaml --data data/data --work-dir runs/data/stage2 --vae-checkpoint runs/data/stage1/vae_best.pt --device cpu --cache-tokens
 
 ```
 
@@ -87,8 +87,8 @@ from token2splat import CanonicalPatchTokenizer, load_config
 from token2splat.inference import generate_objects, load_pipeline
 from token2splat.render import build_cameras, render_views
 
-cfg = load_config("configs/synthetic_smoke.yaml")
-cfg, ckpt, tokenizer, vae, flow = load_pipeline("runs/synthetic/stage2/flow_best.pt", device="cpu")
+cfg = load_config("configs/data_smoke.yaml")
+cfg, ckpt, tokenizer, vae, flow = load_pipeline("runs/data/stage2/flow_best.pt", device="cpu")
 
 # Generate samples
 samples = generate_objects(vae, flow, cfg, classes=[0, 1], samples=4, steps=32, seed=42, device="cpu")
