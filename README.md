@@ -1,4 +1,3 @@
-```markdown
 # ✦ Token2Splat ✦
 
 ### Learning Generative 3D Gaussian Distributions via Canonical Patch Tokens
@@ -7,9 +6,6 @@
 [![Python 3.10](https://img.shields.io/badge/python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)](#-installation)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](#-installation)
 
-</div>
-
----
 
 ## ⚡ Overview
 
@@ -32,7 +28,6 @@ pip install -e .
 
 ```
 
----
 
 ## 🚀 Quick Start
 
@@ -47,7 +42,7 @@ conda run -n Token2Splat python scripts/demo.py --config configs/synthetic_smoke
 
 ## 📁 Core Pipeline
 
-1. **Data Preparation**: Use synthetic smoke data or ObjectGS-34 real scene extraction.
+1. **Data Preparation**: Use ObjectGS-34 scene extraction.
 ```powershell
 python scripts/make_synthetic_data.py --config configs/synthetic_smoke.yaml --out data/synthetic
 
@@ -74,9 +69,6 @@ python scripts/train_stage2.py --config configs/synthetic_smoke.yaml --data data
 * Evaluate: `python scripts/evaluate.py ...`
 
 
-
-*(Tip: Append `--set <param>=<value>` to override any config parameter from the command line.)*
-
 ---
 
 ## ✅ Testing
@@ -87,8 +79,6 @@ Run the test suite (55 CPU-seeded tests):
 conda run -n Token2Splat python -m pytest -q
 
 ```
-
----
 
 ## 🐍 Python API Example
 
@@ -105,8 +95,6 @@ samples = generate_objects(vae, flow, cfg, classes=[0, 1], samples=4, steps=32, 
 
 ```
 
----
-
 ## 📜 Citation
 
 ```bibtex
@@ -116,4 +104,3 @@ samples = generate_objects(vae, flow, cfg, classes=[0, 1], samples=4, steps=32, 
   note   = {Submitted to IJCV}
 }
 
-```
