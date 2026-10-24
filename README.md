@@ -98,9 +98,9 @@ samples = generate_objects(vae, flow, cfg, classes=[0, 1], samples=4, steps=32, 
 ## 📜 Citation
 
 ```bibtex
-@article{token2splat2025,
+@article{token2splat2027,
   title  = {Token2Splat: Learning Generative 3D Gaussian Distributions via Canonical Patch Tokens},
-  year   = {2025},
+  year   = {2027},
   note   = {Submitted to IJCV}
 }
 
