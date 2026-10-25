@@ -69,15 +69,6 @@ python scripts/train_stage2.py --config configs/data_smoke.yaml --data data/data
 * Evaluate: `python scripts/evaluate.py ...`
 
 
----
-
-## ✅ Testing
-
-Run the test suite (55 CPU-seeded tests):
-
-```powershell
-conda run -n Token2Splat python -m pytest -q
-
 ```
 
 ## 🐍 Python API Example
